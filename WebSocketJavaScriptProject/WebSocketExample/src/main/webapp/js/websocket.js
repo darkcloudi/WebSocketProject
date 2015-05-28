@@ -2,7 +2,7 @@
  * Created by Sam on 06/05/15.
  */
 window.onload = init;
-var socket = new WebSocket("ws://localhost:8080/WebSocketJavaProject/actions");
+var socket = new WebSocket("ws://localhost:8080/WebsocketHome/actions");
 socket.onmessage = onMessage;
 
 function onMessage(event) {

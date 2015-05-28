@@ -8,7 +8,7 @@
     <artifactId>websocketJavaProject</artifactId>
     <version>1.0-SNAPSHOT</version>
     <build>
-        <finalName>WebSocketJavaProject</finalName>
+        <finalName>WebsocketHome</finalName>
     </build>
     <properties>
         <maven.compiler.source>1.7</maven.compiler.source>

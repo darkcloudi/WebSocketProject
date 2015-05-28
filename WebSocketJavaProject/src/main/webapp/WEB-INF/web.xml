@@ -4,7 +4,7 @@
     <web-app>
         <display-name>Java Service Web Application</display-name>
 
-    <!--
+
         <servlet>
             <servlet-name>webSockets</servlet-name>
             <servlet-class>org.example.websocket.DeviceWebSocketServer</servlet-class>
@@ -12,10 +12,10 @@
 
         <servlet-mapping>
             <servlet-name>webSockets</servlet-name>
-            <url-pattern>/WebsocketHome</url-pattern>
+            <url-pattern>/</url-pattern>
         </servlet-mapping>
 
-        -->
+
     </web-app>
 
 
