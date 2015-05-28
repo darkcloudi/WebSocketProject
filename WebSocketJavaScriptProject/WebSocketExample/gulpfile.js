@@ -3,7 +3,7 @@ var zip = require("gulp-zip");
 
 gulp.task("war", function() {
     return gulp.src('src/main/webapp/**')
-        .pipe(zip('archive.zip'))
+        .pipe(zip('archive.war'))
         .pipe(gulp.dest('./dist'));
 
 })
