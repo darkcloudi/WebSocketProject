@@ -9,6 +9,7 @@ import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
+import java.io.IOException;
 import java.io.StringReader;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -26,12 +27,20 @@ public class DeviceWebSocketServer {
 
     @OnOpen
     public void open(Session session) {
-        sessionHandler.addSession(session);
+        System.out.println(session.getId() + " has opened a connection");
+        //try {
+            //session.getBasicRemote().sendText("Connection Established");
+            sessionHandler.addSession(session);
+        //} catch (IOException ex) {
+        //    ex.printStackTrace();
+        //}
+
     }
 
     @OnClose
     public void close(Session session) {
-        sessionHandler.removeSession(session);
+        System.out.println("Session " + session.getId() + " has ended");
+        //sessionHandler.removeSession(session);
     }
 
     @OnError
@@ -41,6 +50,7 @@ public class DeviceWebSocketServer {
 
     @OnMessage
     public void handleMessage(String message, Session session) {
+        System.out.println("Message from " + session.getId() + ": " + message);
         try (JsonReader reader = Json.createReader(new StringReader(message))) {
             JsonObject jsonMessage = reader.readObject();
 

@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.inject.Inject;
 import javax.json.JsonObject;
 import javax.json.spi.JsonProvider;
 import javax.websocket.Session;
@@ -27,11 +28,14 @@ public class DeviceSessionHandler {
 
 
     public void addSession(Session session) {
+        System.out.println("Added session " + session);
+        /*
         sessions.add(session);
         for (Device device : devices) {
             JsonObject addMessage = createAddMessage(device);
             sendToSession(session, addMessage);
         }
+        */
     }
 
     public void removeSession(Session session) {
